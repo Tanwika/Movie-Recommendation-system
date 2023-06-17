@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=FourthRatings
+comment1.params=
+comment1.target=FourthRatings()
+comment10.params=raterId\ numSimilarRaters\ minimalRaters\ filterCriteria
+comment10.target=java.util.ArrayList\ getSimilarRatingsByFilter(java.lang.String,\ int,\ int,\ Filter)
+comment2.params=ratingsFile
+comment2.target=FourthRatings(java.lang.String)
+comment3.params=
+comment3.target=int\ getRaterSize()
+comment4.params=movieId\ minimalRaters
+comment4.target=double\ getAverageById(java.lang.String,\ int)
+comment5.params=minimalRaters
+comment5.target=java.util.ArrayList\ getAverageRatings(int)
+comment6.params=minimalRaters\ filterCriteria
+comment6.target=java.util.ArrayList\ getAverageRatingsByFilter(int,\ Filter)
+comment7.params=me\ r
+comment7.target=double\ dotProduct(Rater,\ Rater)
+comment8.params=id
+comment8.target=java.util.ArrayList\ getSimilarities(java.lang.String)
+comment8.text=private\ ArrayList<Rating>\ getSimilarities(String\ id){\r\n\ \ \ \ \ \ \ ArrayList<Rating>\ similarities\ \=\ new\ ArrayList<Rating>();\r\n\ \ \ \ \ \ \ ArrayList<String>\ raterIdList\ \=\ RaterDatabase.filterBy(new\ TrueFilter());\r\n\ \ \ \ \ \ \ Rater\ me\ \=\ RaterDatabase.getRater(id);\r\n\ \ \ \ \ \ \ for(String\ currId\ \:\ raterIdList){\r\n\ \ \ \ \ \ \ \ \ \ if(\!\ currId.equals(id)){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ Rater\ r\ \=\ RaterDatabase.getRater(currId);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ double\ dotProduct\ \=\ dotProduct(me,r);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ if(dotProduct>0){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rating\ rating\ \=\ new\ Rating(currId,dotProduct);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ similarities.add(rating);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ Collections.sort(similarities,Collections.reverseOrder());\r\n\ \ \ \ \ \ \ return\ similarities;\r\n}
+comment9.params=raterId\ numSimilarRaters\ minimalRaters
+comment9.target=java.util.ArrayList\ getSimilarRatings(java.lang.String,\ int,\ int)
+numComments=11
